@@ -1,0 +1,62 @@
+<%- include('partials/header', { title: 'Add Student' }) %>
+<%- include('partials/navigation', { page: 'add-student' }) %>
+
+<section class="section active">
+    <h2>Add New Student</h2>
+    
+    <% if (message) { %>
+        <div class="message <%= message.includes('successfully') ? 'success' : 'error' %>">
+            <%= message %>
+        </div>
+    <% } %>
+    
+    <form class="student-form" method="POST" action="/add-student">
+        <div class="form-group">
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" min="16" max="100" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="course">Course:</label>
+            <select id="course" name="course" required>
+                <option value="">Select a course</option>
+                <option value="Computer Science">Computer Science</option>
+                <option value="Mathematics">Mathematics</option>
+                <option value="Physics">Physics</option>
+                <option value="Chemistry">Chemistry</option>
+                <option value="Biology">Biology</option>
+                <option value="English">English</option>
+                <option value="History">History</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="status">Status:</label>
+            <select id="status" name="status" required>
+                <option value="">Select status</option>
+                <option value="Active">Active</option>
+                <option value="Inactive">Inactive</option>
+                <option value="Graduated">Graduated</option>
+            </select>
+        </div>
+        
+        <button type="submit" class="btn-primary">Add Student</button>
+    </form>
+</section>
+
+<%- include('partials/footer') %>

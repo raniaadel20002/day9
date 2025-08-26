@@ -1,0 +1,35 @@
+<%- include('partials/header', { title: 'Dashboard' }) %>
+<%- include('partials/navigation', { page: 'dashboard' }) %>
+
+<section class="section active">
+    <h2>Dashboard</h2>
+    <div class="stats-grid">
+        <div class="stat-card">
+            <h3>Total Students</h3>
+            <div class="stat-number"><%= stats.total %></div>
+        </div>
+        <div class="stat-card">
+            <h3>Active Students</h3>
+            <div class="stat-number"><%= stats.active %></div>
+        </div>
+        <div class="stat-card">
+            <h3>Graduated</h3>
+            <div class="stat-number"><%= stats.graduated %></div>
+        </div>
+    </div>
+    
+    <div class="recent-activity">
+        <h3>Recent Activity</h3>
+        <div class="activity-list">
+            <% if (recentStudents.length > 0) { %>
+                <% recentStudents.forEach(student => { %>
+                    <p>Added <%= student.firstName %> <%= student.lastName %> to <%= student.course %></p>
+                <% }) %>
+            <% } else { %>
+                <p class="no-activity">No recent activity</p>
+            <% } %>
+        </div>
+    </div>
+</section>
+
+<%- include('partials/footer') %>

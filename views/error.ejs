@@ -1,0 +1,35 @@
+<%- include('partials/header', { title: 'Error' }) %>
+<%- include('partials/navigation', { page: 'error' }) %>
+
+<section class="section active">
+    <div style="text-align: center; padding: 60px 20px;">
+        <div style="background: #fef2f2; border: 1px solid #fecaca; border-radius: 12px; padding: 40px; max-width: 500px; margin: 0 auto;">
+            <div style="font-size: 4rem; color: #dc2626; margin-bottom: 20px;">⚠️</div>
+            <h2 style="color: #dc2626; margin-bottom: 15px;">Access Denied</h2>
+            <p style="color: #64748b; margin-bottom: 30px; line-height: 1.6;">
+                <%= message %>
+            </p>
+            
+            <% if (user) { %>
+                <div style="background: #f8fafc; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+                    <p style="color: #374151; margin-bottom: 10px;">
+                        <strong>Current User:</strong> <%= user.fullName %> (<%= user.username %>)
+                    </p>
+                    <p style="color: #374151;">
+                        <strong>Role:</strong> 
+                        <span style="background: #4f46e5; color: white; padding: 4px 12px; border-radius: 12px; font-size: 0.9rem;">
+                            <%= user.role %>
+                        </span>
+                    </p>
+                </div>
+            <% } %>
+            
+            <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                <a href="/" class="btn-primary">Go to Dashboard</a>
+                <a href="/logout" class="btn-secondary">Logout</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<%- include('partials/footer') %>

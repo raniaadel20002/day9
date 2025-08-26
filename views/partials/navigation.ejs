@@ -1,0 +1,19 @@
+<nav class="navigation">
+    <a href="/" class="nav-btn <%= page === 'dashboard' ? 'active' : '' %>">Dashboard</a>
+    <a href="/add-student" class="nav-btn <%= page === 'add-student' ? 'active' : '' %>">Add Student</a>
+    <a href="/students" class="nav-btn <%= page === 'view-students' ? 'active' : '' %>">View Students</a>
+    <% if (user && user.role === 'admin') { %>
+        <a href="/users" class="nav-btn <%= page === 'manage-users' ? 'active' : '' %>">Manage Users</a>
+    <% } %>
+    <div style="margin-left: auto; display: flex; align-items: center; gap: 15px;">
+        <span style="color: #64748b; font-size: 0.9rem;">
+            Welcome, <strong><%= user ? user.fullName : 'Guest' %></strong>
+            <% if (user) { %>
+                (<span style="background: #4f46e5; color: white; padding: 2px 8px; border-radius: 12px; font-size: 0.8rem;"><%= user.role %></span>)
+            <% } %>
+        </span>
+        <% if (user) { %>
+            <a href="/logout" class="nav-btn" style="background: #ef4444; color: white;">Logout</a>
+        <% } %>
+    </div>
+</nav>

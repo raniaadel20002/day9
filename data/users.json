@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "username": "admin",
+    "password": "admin123",
+    "role": "admin",
+    "fullName": "System Administrator",
+    "email": "admin@school.com",
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": 2,
+    "username": "teacher1",
+    "password": "teacher123",
+    "role": "teacher",
+    "fullName": "John Teacher",
+    "email": "john.teacher@school.com",
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": 3,
+    "username": "student1",
+    "password": "student123",
+    "role": "student",
+    "fullName": "Jane Student",
+    "email": "jane.student@school.com",
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  }
+]
