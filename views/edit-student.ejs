@@ -60,4 +60,20 @@
     </form>
 </section>
 
+<script>
+
+fetch('/students/1', {
+  method: 'PUT',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ name: "John Updated", age: 16 })
+})
+.then(res => res.json())
+.then(data => console.log(data));
+
+
+fetch('/users/2', { method: 'DELETE' })
+  .then(res => res.json())
+  .then(data => console.log(data));
+</script>
+
 <%- include('partials/footer') %>
